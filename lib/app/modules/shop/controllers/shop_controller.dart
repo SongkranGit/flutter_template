@@ -1,9 +1,10 @@
+import 'package:flutter_template/app/data/models/product.dart';
 import 'package:get/get.dart';
 
 class ShopController extends GetxController {
-  //TODO: Implement ShopController
-
+  var products = List<Product>().obs;
   final count = 0.obs;
+
   @override
   void onInit() {
     super.onInit();

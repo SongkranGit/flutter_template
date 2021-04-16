@@ -1,23 +1,30 @@
-import 'dart:convert' as convert;
-
 import 'package:flutter_template/app/data/models/product.dart';
 import 'package:get/get.dart';
 
 class ProductProvider extends GetConnect {
   @override
   void onInit() {
-    httpClient.defaultDecoder = (map) => Product.fromJson(map);
+    httpClient.defaultDecoder = (val) => Product.fromJson(val as Map<String, dynamic>);
     httpClient.baseUrl = "http://makeup-api.herokuapp.com/api/v1/";
     super.onInit();
   }
 
-  Future<List<Product>> fetchProducts() async {
-    var response = await get('products.json?brand=maybelline');
-    if (response.statusCode == 200) {
-      List jsonResponse = convert.jsonDecode(response.body);
-      return jsonResponse.map((e) => new Product.fromJson(e)).toList();
-    } else {
-      return null;
-    }
-  }
+  //
+  // Future<List<Product>> fetchProducts() async {
+  //   final response = await get('products.json?brand=maybelline');
+  //   if (response.status.hasError) {
+  //     return Future.error(response.statusText);
+  //   } else {
+  //     return productFromJson(response.body);
+  //   }
+  // var url = Uri.parse(
+  //     'http://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline');
+  // var response = await client.get(url);
+  // if (response.statusCode == 200) {
+  //   var jsonString = response.body;
+  //   return productFromJson(jsonString);
+  // } else {
+  //   //show error message
+  //   return null;
+  // }
 }

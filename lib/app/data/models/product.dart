@@ -1,26 +1,12 @@
+import 'dart:convert';
+
 import 'package:get/get.dart';
 
-class Product {
-  int id;
-  Brand brand;
-  String name;
-  String price;
-  dynamic priceSign;
-  dynamic currency;
-  String imageLink;
-  String productLink;
-  String websiteLink;
-  String description;
-  double rating;
-  String category;
-  String productType;
-  List<dynamic> tagList;
-  DateTime createdAt;
-  DateTime updatedAt;
-  String productApiUrl;
-  String apiFeaturedImage;
-  List<ProductColor> productColors;
+List<Product> productFromJson(String str) => List<Product>.from(json.decode(str).map((x) => Product.fromJson(x)));
 
+String productToJson(List<Product> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+
+class Product {
   Product({
     this.id,
     this.brand,
@@ -43,6 +29,26 @@ class Product {
     this.productColors,
   });
 
+  int id;
+  Brand brand;
+  String name;
+  String price;
+  dynamic priceSign;
+  dynamic currency;
+  String imageLink;
+  String productLink;
+  String websiteLink;
+  String description;
+  double rating;
+  String category;
+  String productType;
+  List<dynamic> tagList;
+  DateTime createdAt;
+  DateTime updatedAt;
+  String productApiUrl;
+  String apiFeaturedImage;
+  List<ProductColor> productColors;
+
   var isFavorite = false.obs;
 
   factory Product.fromJson(Map<String, dynamic> json) => Product(
@@ -64,8 +70,7 @@ class Product {
         updatedAt: DateTime.parse(json["updated_at"]),
         productApiUrl: json["product_api_url"],
         apiFeaturedImage: json["api_featured_image"],
-        productColors: List<ProductColor>.from(
-            json["product_colors"].map((x) => ProductColor.fromJson(x))),
+        productColors: List<ProductColor>.from(json["product_colors"].map((x) => ProductColor.fromJson(x))),
       );
 
   Map<String, dynamic> toJson() => {
@@ -87,8 +92,7 @@ class Product {
         "updated_at": updatedAt.toIso8601String(),
         "product_api_url": productApiUrl,
         "api_featured_image": apiFeaturedImage,
-        "product_colors":
-            List<dynamic>.from(productColors.map((x) => x.toJson())),
+        "product_colors": List<dynamic>.from(productColors.map((x) => x.toJson())),
       };
 }
 
