@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_template/app/data/providers/breed_provider.dart';
 import 'package:get/get.dart';
 
 import 'app/routes/app_pages.dart';
 
 void main() {
-  var breedProvider = Get.put(BreedProvider());
-  var breeds = breedProvider.getBreeds();
-  breeds.then((value) => print('===' + value.toString()));
+  // var breedProvider = Get.put(BreedProvider());
+  // var breeds = breedProvider.getBreeds();
+  // breeds.then((value) => print('===' + value.toString()));
 
   runApp(
     GetMaterialApp(

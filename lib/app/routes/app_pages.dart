@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import 'package:flutter_template/app/modules/gridview/bindings/gridview_binding.dart';
+import 'package:flutter_template/app/modules/gridview/views/gridview_view.dart';
 import 'package:flutter_template/app/modules/home/bindings/home_binding.dart';
 import 'package:flutter_template/app/modules/home/views/home_view.dart';
 import 'package:flutter_template/app/modules/map/bindings/map_binding.dart';
@@ -41,6 +43,11 @@ class AppPages {
       name: _Paths.NOTIFICATION,
       page: () => NotificationView(),
       binding: NotificationBinding(),
+    ),
+    GetPage(
+      name: _Paths.GRIDVIEW,
+      page: () => GridviewView(),
+      binding: GridviewBinding(),
     ),
   ];
 }
