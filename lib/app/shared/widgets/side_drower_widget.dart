@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_template/app/modules/gridview/views/gridview_view.dart';
+import 'package:flutter_template/app/modules/login/views/login_view.dart';
 import 'package:flutter_template/app/modules/map/views/map_view.dart';
 import 'package:flutter_template/app/modules/shop/views/shop_view.dart';
 import 'package:get/get.dart';
@@ -45,11 +46,16 @@ class SideDrawerWidget extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.login_rounded),
             title: Text('Login'),
-            onTap: () => {},
+            onTap: () => {Get.to(() => LoginView())},
           ),
           ListTile(
             leading: Icon(Icons.grid_view),
             title: Text('GridView'),
+            onTap: () => {Get.to(() => GridviewView())},
+          ),
+          ListTile(
+            leading: Icon(Icons.language_rounded),
+            title: Text('i18n'),
             onTap: () => {Get.to(() => GridviewView())},
           ),
         ],

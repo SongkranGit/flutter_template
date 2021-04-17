@@ -4,6 +4,8 @@ import 'package:flutter_template/app/modules/gridview/bindings/gridview_binding.
 import 'package:flutter_template/app/modules/gridview/views/gridview_view.dart';
 import 'package:flutter_template/app/modules/home/bindings/home_binding.dart';
 import 'package:flutter_template/app/modules/home/views/home_view.dart';
+import 'package:flutter_template/app/modules/login/bindings/login_binding.dart';
+import 'package:flutter_template/app/modules/login/views/login_view.dart';
 import 'package:flutter_template/app/modules/map/bindings/map_binding.dart';
 import 'package:flutter_template/app/modules/map/views/map_view.dart';
 import 'package:flutter_template/app/modules/notification/bindings/notification_binding.dart';
@@ -48,6 +50,11 @@ class AppPages {
       name: _Paths.GRIDVIEW,
       page: () => GridviewView(),
       binding: GridviewBinding(),
+    ),
+    GetPage(
+      name: _Paths.LOGIN,
+      page: () => LoginView(),
+      binding: LoginBinding(),
     ),
   ];
 }

@@ -8,6 +8,7 @@ abstract class Routes {
   static const MAP = _Paths.MAP;
   static const NOTIFICATION = _Paths.NOTIFICATION;
   static const GRIDVIEW = _Paths.GRIDVIEW;
+  static const LOGIN = _Paths.LOGIN;
 }
 
 abstract class _Paths {
@@ -17,4 +18,5 @@ abstract class _Paths {
   static const MAP = '/map';
   static const NOTIFICATION = '/notification';
   static const GRIDVIEW = '/gridview';
+  static const LOGIN = '/login';
 }
