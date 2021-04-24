@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import 'package:flutter_template/app/modules/event/bindings/event_binding.dart';
+import 'package:flutter_template/app/modules/event/views/event_view.dart';
 import 'package:flutter_template/app/modules/gridview/bindings/gridview_binding.dart';
 import 'package:flutter_template/app/modules/gridview/views/gridview_view.dart';
 import 'package:flutter_template/app/modules/home/bindings/home_binding.dart';
@@ -10,6 +12,8 @@ import 'package:flutter_template/app/modules/map/bindings/map_binding.dart';
 import 'package:flutter_template/app/modules/map/views/map_view.dart';
 import 'package:flutter_template/app/modules/notification/bindings/notification_binding.dart';
 import 'package:flutter_template/app/modules/notification/views/notification_view.dart';
+import 'package:flutter_template/app/modules/order/bindings/order_binding.dart';
+import 'package:flutter_template/app/modules/order/views/order_view.dart';
 import 'package:flutter_template/app/modules/settings/bindings/settings_binding.dart';
 import 'package:flutter_template/app/modules/settings/views/settings_view.dart';
 import 'package:flutter_template/app/modules/shop/bindings/shop_binding.dart';
@@ -55,6 +59,16 @@ class AppPages {
       name: _Paths.LOGIN,
       page: () => LoginView(),
       binding: LoginBinding(),
+    ),
+    GetPage(
+      name: _Paths.EVENT,
+      page: () => EventView(),
+      binding: EventBinding(),
+    ),
+    GetPage(
+      name: _Paths.ORDER,
+      page: () => OrderView(),
+      binding: OrderBinding(),
     ),
   ];
 }

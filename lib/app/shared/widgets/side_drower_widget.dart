@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_template/app/modules/event/views/event_view.dart';
 import 'package:flutter_template/app/modules/gridview/views/gridview_view.dart';
-import 'package:flutter_template/app/modules/login/views/login_view.dart';
 import 'package:flutter_template/app/modules/map/views/map_view.dart';
-import 'package:flutter_template/app/modules/shop/views/shop_view.dart';
 import 'package:get/get.dart';
 
 class SideDrawerWidget extends StatelessWidget {
@@ -26,7 +25,7 @@ class SideDrawerWidget extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.home),
             title: Text('Home'),
-            onTap: () => {},
+            onTap: () => {Navigator.of(context).pop()},
           ),
           ListTile(
             leading: Icon(Icons.map),
@@ -41,12 +40,12 @@ class SideDrawerWidget extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.shop_rounded),
             title: Text('Shop'),
-            onTap: () => {Get.to(() => ShopView())},
+            onTap: () => {Get.toNamed('/shop')},
           ),
           ListTile(
             leading: Icon(Icons.login_rounded),
             title: Text('Login'),
-            onTap: () => {Get.to(() => LoginView())},
+            onTap: () => {Get.toNamed('/login')},
           ),
           ListTile(
             leading: Icon(Icons.grid_view),
@@ -57,6 +56,11 @@ class SideDrawerWidget extends StatelessWidget {
             leading: Icon(Icons.language_rounded),
             title: Text('i18n'),
             onTap: () => {Get.to(() => GridviewView())},
+          ),
+          ListTile(
+            leading: Icon(Icons.event),
+            title: Text('Event'),
+            onTap: () => {Get.to(() => EventView())},
           ),
         ],
       ),

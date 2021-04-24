@@ -9,6 +9,8 @@ abstract class Routes {
   static const NOTIFICATION = _Paths.NOTIFICATION;
   static const GRIDVIEW = _Paths.GRIDVIEW;
   static const LOGIN = _Paths.LOGIN;
+  static const EVENT = _Paths.EVENT;
+  static const ORDER = _Paths.ORDER;
 }
 
 abstract class _Paths {
@@ -19,4 +21,6 @@ abstract class _Paths {
   static const NOTIFICATION = '/notification';
   static const GRIDVIEW = '/gridview';
   static const LOGIN = '/login';
+  static const EVENT = '/event';
+  static const ORDER = '/order';
 }

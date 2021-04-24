@@ -11,7 +11,7 @@ class HomeView extends GetView<HomeController> {
     return Scaffold(
       drawer: SideDrawerWidget(),
       appBar: AppBar(
-        title: Text('HomeView'),
+        title: Text('Home'),
         centerTitle: true,
       ),
       body: Center(
@@ -20,7 +20,7 @@ class HomeView extends GetView<HomeController> {
           children: [
             GetX<HomeController>(
               builder: (_) {
-                return Text('xxxxx ${_.title}');
+                return Text(' ${_.title}');
               },
             ),
           ],
