@@ -10,16 +10,16 @@ class SideDrawerWidget extends StatelessWidget {
     return Drawer(
       child: Column(
         children: <Widget>[
-          DrawerHeader(
-            child: Center(
-              child: Text(
-                'Side menu with GetX',
-                textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.white, fontSize: 25),
+          UserAccountsDrawerHeader(
+            accountName: Text('Mr. John Sommit'),
+            accountEmail: Text('flutter@mail.com'),
+            currentAccountPicture: ClipOval(
+              child: Image.network(
+                'https://avatars.githubusercontent.com/u/24783190?v=4',
+                width: 100,
+                height: 100,
+                fit: BoxFit.cover,
               ),
-            ),
-            decoration: BoxDecoration(
-              color: Colors.blue,
             ),
           ),
           ListTile(
@@ -62,6 +62,19 @@ class SideDrawerWidget extends StatelessWidget {
             title: Text('Event'),
             onTap: () => {Get.to(() => EventView())},
           ),
+          const Divider(
+            height: 0.8,
+            thickness: 1,
+          ),
+          Expanded(
+              child: Align(
+            alignment: FractionalOffset.bottomCenter,
+            child: ListTile(
+              leading: Icon(Icons.settings),
+              title: Text('Settings'),
+              onTap: () => {Navigator.of(context).pop()},
+            ),
+          ))
         ],
       ),
     );

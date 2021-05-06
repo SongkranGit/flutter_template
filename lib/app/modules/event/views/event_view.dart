@@ -9,7 +9,7 @@ class EventView extends GetView<EventController> {
     Get.put(EventController());
     return Scaffold(
       appBar: AppBar(
-        title: Text('EventView'),
+        title: Text('Event Example'),
         centerTitle: true,
       ),
       body: Container(
@@ -32,15 +32,51 @@ class EventView extends GetView<EventController> {
                   ),
                 ),
               ),
+              const Divider(
+                height: 10.0,
+                thickness: 0.5,
+              ),
               Container(
-                padding: const EdgeInsets.all(8.0),
-                decoration: BoxDecoration(color: Colors.blue),
-                width: MediaQuery.of(context).size.width,
-                height: 100,
+                margin: const EdgeInsets.only(top: 10.0),
+                // decoration: BoxDecoration(color: Colors.blue),
                 child: Row(
-                  children: [Text('sss'), Text('data')],
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    TextButton.icon(
+                        onPressed: () => print('xxx'),
+                        icon: const Icon(
+                          Icons.photo,
+                          color: Colors.green,
+                        ),
+                        label: Text('Photo')),
+                    const VerticalDivider(
+                      width: 8.0,
+                      color: Colors.red,
+                    ),
+                    TextButton.icon(
+                        onPressed: () => print('xxx'),
+                        icon: const Icon(
+                          Icons.room,
+                          color: Colors.red,
+                        ),
+                        label: Text('Room')),
+                    const VerticalDivider(
+                      width: 8.0,
+                    ),
+                    TextButton.icon(
+                        onPressed: () => print('xxx'),
+                        icon: const Icon(
+                          Icons.videocam,
+                          color: Colors.red,
+                        ),
+                        label: Text('Live')),
+                  ],
                 ),
-              )
+              ),
+              const Divider(
+                height: 10.0,
+                thickness: 0.5,
+              ),
             ],
           ),
         ),
